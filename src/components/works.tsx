@@ -29,9 +29,9 @@ const ProjectCard = ({
         scale: 1,
         speed: 450,
       }}
-      className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
+      className="bg-tertiary sm:p-5 p-4 rounded-2xl sm:w-[360px] w-full max-w-sm"
     >
-      <div className="relative w-full h-[230px]">
+      <div className="relative w-full sm:h-[230px] h-[200px]">
         {/* Work image */}
         <img
           src={image}
@@ -72,14 +72,14 @@ const ProjectCard = ({
 
       {/* Work Info */}
       <div className="mt-5">
-        <h3 className="text-white font-bold text-[24px]">{name}</h3>
-        <p className="mt-2 text-secondary text-[14px]">{description}</p>
+        <h3 className="text-white font-bold sm:text-[24px] text-[20px]">{name}</h3>
+        <p className="mt-2 text-secondary sm:text-[14px] text-[12px]">{description}</p>
       </div>
 
       {/* Work Tag */}
-      <div className="mt-4 flex flex-wrap gap-2">
+      <div className="mt-4 flex flex-wrap sm:gap-2 gap-1">
         {tags.map((tag, tagIdx) => (
-          <p key={`Tag-${tagIdx}`} className={cn(tag.color, "text-[14px]")}>
+          <p key={`Tag-${tagIdx}`} className={cn(tag.color, "sm:text-[14px] text-[12px]")}>
             #{tag.name}
           </p>
         ))}
@@ -114,7 +114,7 @@ export const Works = () => {
         </div>
 
         {/* Project Card */}
-        <div className="mt-20 flex flex-wrap gap-7">
+        <div className="mt-20 flex flex-wrap sm:gap-7 gap-4 justify-center">
           {PROJECTS.map((project, i) => (
             <ProjectCard key={`project-${i}`} index={i} {...project} />
           ))}
